@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import logo from '../Logo/image.png'; // Your logo path
+import { Link } from 'react-router-dom';
 
 const NavContainer = styled.nav`
   background-color: #fff;
@@ -224,7 +225,7 @@ const NavbarCandidat = () => {
               <DropdownItem><a href="/ExplorerOffres">Explorer les offres</a></DropdownItem>
               <DropdownItem><a href="/sauvegardées">Offres sauvegardées</a></DropdownItem>
               <DropdownItem><a href="/candidatures">Mes candidatures</a></DropdownItem>
-              <DropdownItem><a href="/Messagerie">Messagerie</a></DropdownItem>
+              <DropdownItem><Link to="/candidat/dashboard/messagerie">Messagerie</Link></DropdownItem>
             </DropdownMenu>
           </NavItem>
 
@@ -250,7 +251,9 @@ const NavbarCandidat = () => {
 
       {mobileMenuOpen && (
         <MobileMenu>
-          <MobileMenuItem><MobileMenuLink href="/dashboard">Tableau de bord</MobileMenuLink></MobileMenuItem>
+          <MobileMenuItem>
+            <Link to="/candidat/dashboard">Tableau de bord</Link>
+          </MobileMenuItem>
           <MobileMenuItem><MobileMenuLink href="#">Offre d'emploi</MobileMenuLink></MobileMenuItem>
           <MobileMenuItem><MobileMenuLink href="#">Conseils de carrière</MobileMenuLink></MobileMenuItem>
         </MobileMenu>
